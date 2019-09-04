@@ -1,2 +1,23 @@
+<ul class="todo-list">
+    <li class="todo-item">
+        <div class="status" [ngClass]="{'done':true}">
+            <i class="material-icons">
+                {{true ? 'radio_button_checked' : 'radio_button_unchecked'}}
+            </i>
+            <!-- <i class="material-icons">
+                    radio_button_checked
+                </i> -->
+        </div>
+        <div class="content">
+            <div class="title">Test title</div>
+            <div class="date">12.12.13</div>
+        </div>
+        <div class="evens">
+            <button class="delete">Delete</button>
+            <button class="edit" routerLink="/edit">Edit</button>
+        </div>
+    </li>
 
-<button class="button" routerLink="/edit">Add todo</button>
+</ul>
+
+<button class="add" routerLink="/edit">Add todo</button>
