@@ -1,0 +1,14 @@
+{
+    "todos":[
+        {
+            "title":"item1",
+            "status":false,
+            "date":"25.06.2019"
+        },
+        {
+            "title":"item2",
+            "status":true,
+            "date":"25.05.2019"
+        }
+    ]
+}
