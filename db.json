@@ -3,12 +3,12 @@
         {
             "title":"item1",
             "status":false,
-            "date":"25.06.2019"
+            "date":"6/15/15, 9:03 AM"
         },
         {
             "title":"item2",
             "status":true,
-            "date":"25.05.2019"
+            "date":"6/15/15, 9:03 AM"
         }
     ]
 }
