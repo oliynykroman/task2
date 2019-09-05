@@ -17,7 +17,7 @@ export class TodoService {
   }
 
   public getTodoList() {
-    return this.http.get<todo>(`${api}/todos`);
+    return this.http.get<todo[]>(`${api}/todos`);
   }
 
   public addTodoItem(todoItem: todo) {

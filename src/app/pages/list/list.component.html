@@ -1,5 +1,5 @@
-<ul class="todo-list" *ngIf="todoList | async as todoList">
-    <li class="todo-item" *ngFor="let item of todoList">
+<ul class="todo-list" *ngIf="todoList">
+    <li class="todo-item" *ngFor="let item of todoList; let i = index">
         <div class="status" [ngClass]="{'done':item.status}">
             <i class="material-icons">
                 {{item.status ? 'radio_button_checked' : 'radio_button_unchecked'}}
@@ -10,7 +10,7 @@
             <div class="date">{{item.date | date}}</div>
         </div>
         <div class="evens">
-            <button class="delete">Delete</button>
+            <button class="delete" (click)="deleteItem(item, i)">Delete</button>
             <button class="edit" routerLink="/edit">Edit</button>
         </div>
     </li>

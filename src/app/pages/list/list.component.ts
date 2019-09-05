@@ -10,12 +10,26 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
 
-  public todoList: Observable<Object>;
+  public todoList: todo[] = [];
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-    this.todoList = this.todoService.getTodoList();
+    this.getTodoList();
   }
 
+  getTodoList(){
+    this.todoService.getTodoList().subscribe(data => this.todoList = data);
+  }
+
+  deleteItem(item: todo, index: number) {
+    let confirmStatus = confirm(`are you shure that you want to delete ${item.title}`);
+    if (confirmStatus) {
+      this.todoService.deleteTodoItem(item.id).subscribe(
+        success => { alert(success); this.todoList = this.todoList.splice(index, 1); },
+        error => alert(`Oooops something wrong: ${error}. Please try again later`)
+      );
+    }
+
+  }
 }
