@@ -28,21 +28,17 @@ export class AddEditComponent implements OnInit {
     })
   }
 
-  add(todoItem) {
+  add(todoItem: todo) {
     this.todoService.addTodoItem(todoItem).subscribe(
-      success => this.succesfullResponse(),
+      success => {
+        alert('todo created!');
+        this.todoForm.controls['title'].setValue('');
+      },
       error => alert(`Oooops something wrong: ${error}. Please try again later`)
     );
   }
-
-  succesfullResponse() {
-    alert('todo created!');
-    this.todoForm.controls['title'].setValue('');
-  }
   onSubmit() {
     this.add(this.todoForm.value);
-    console.log(this.todoForm);
   }
-
 
 }
