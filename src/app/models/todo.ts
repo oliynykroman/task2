@@ -1,5 +1,6 @@
 export class todo {
+    'id':number
     'title': string;
     'status': boolean;
-    'date': string;
+    'date': number;
 }
