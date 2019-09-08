@@ -2,6 +2,7 @@
     <h2 class="title">Add todo</h2>
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Todo name" formControlName="title">
-        <button class="submit" type="submit" [disabled]="!todoForm.valid">Add todo</button>
+        <button class="submit" type="submit" [disabled]="!todoForm.valid">{{isEdit ? 'edit todo' : 'Add todo'}}</button>
     </div>
 </form>
+<button class="add" routerLink="/">Back to list</button>

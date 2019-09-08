@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AddEditComponent
+  },
+  {
+    path: ':id',
+    component: AddEditComponent
   }
 ];
 

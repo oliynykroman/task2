@@ -18,18 +18,19 @@ export class ListComponent implements OnInit {
     this.getTodoList();
   }
 
-  getTodoList(){
+  getTodoList() {
     this.todoService.getTodoList().subscribe(data => this.todoList = data);
   }
 
   deleteItem(item: todo, index: number) {
+    console.log(index);
     let confirmStatus = confirm(`are you shure that you want to delete ${item.title}`);
     if (confirmStatus) {
       this.todoService.deleteTodoItem(item.id).subscribe(
-        success => { alert(success); this.todoList = this.todoList.splice(index, 1); },
+        // success => this.todoList.splice(index, 1),
+        success => this.getTodoList(),
         error => alert(`Oooops something wrong: ${error}. Please try again later`)
       );
     }
-
   }
 }

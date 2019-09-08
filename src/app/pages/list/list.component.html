@@ -1,4 +1,5 @@
-<ul class="todo-list" *ngIf="todoList">
+<h3 *ngIf="todoList.length < 1">Todos not found</h3>
+<ul class="todo-list" *ngIf="todoList.length > 0">
     <li class="todo-item" *ngFor="let item of todoList; let i = index">
         <div class="status" [ngClass]="{'done':item.status}">
             <i class="material-icons">
@@ -11,10 +12,9 @@
         </div>
         <div class="evens">
             <button class="delete" (click)="deleteItem(item, i)">Delete</button>
-            <button class="edit" routerLink="/edit">Edit</button>
+            <button class="edit" [routerLink]="['/edit', item.id]" >Edit</button>
         </div>
     </li>
-
 </ul>
 
 <button class="add" routerLink="/edit">Add todo</button>
