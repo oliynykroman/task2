@@ -31,6 +31,7 @@ export class AddEditComponent implements OnInit {
       "status": new FormControl(false),
       "date": new FormControl(this.myDate)
     })
+    
   }
 
   initEditData() {
