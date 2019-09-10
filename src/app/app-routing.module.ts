@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/list/list.module').then(mod => mod.ListModule)
   },
   {
-    path: 'edit',
+    path: 'form',
     loadChildren: () => import('./pages/add-edit/add-edit.module').then(mod => mod.AddEditModule)
   },
   {

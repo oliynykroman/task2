@@ -20,12 +20,18 @@ export class TodoService {
     return this.http.get<todo[]>(`${api}/todos`);
   }
 
+  public getTodoItem(id: number) {
+    return this.http.patch<todo>(`${api}/todos/${id}`, status);
+  }
+
   public addTodoItem(todoItem: todo) {
     return this.http.post<todo>(`${api}/todos`, todoItem);
   }
-  public editTodoItem(todoItem: todo) {
-    return this.http.put<todo>(`${api}/todos`, todoItem);
+
+  public updateTodoItem(id: number, status) {
+    return this.http.patch<todo>(`${api}/todos/${id}`, status);
   }
+  
   public deleteTodoItem(todoItemId: number) {
     return this.http.delete<todo>(`${api}/todos/${todoItemId}`);
   }

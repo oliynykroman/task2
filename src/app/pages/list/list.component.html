@@ -1,7 +1,7 @@
 <h3 *ngIf="todoList.length < 1">Todos not found</h3>
 <ul class="todo-list" *ngIf="todoList.length > 0">
-    <li class="todo-item" *ngFor="let item of todoList; let i = index">
-        <div class="status" [ngClass]="{'done':item.status}">
+    <li class="todo-item" *ngFor="let item of todoList; let i = index"  [ngClass]="{'done':item.status}">
+        <div class="status" (click) = "changeStatus(item)">
             <i class="material-icons">
                 {{item.status ? 'radio_button_checked' : 'radio_button_unchecked'}}
             </i>
@@ -12,9 +12,9 @@
         </div>
         <div class="evens">
             <button class="delete" (click)="deleteItem(item, i)">Delete</button>
-            <button class="edit" [routerLink]="['/edit', item.id]" >Edit</button>
+            <button class="edit" [routerLink]="['/form/edit', item.id]" >Edit</button>
         </div>
     </li>
 </ul>
 
-<button class="add" routerLink="/edit">Add todo</button>
+<button class="add" routerLink="/form">Add todo</button>

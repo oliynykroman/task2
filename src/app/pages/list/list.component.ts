@@ -23,7 +23,6 @@ export class ListComponent implements OnInit {
   }
 
   deleteItem(item: todo, index: number) {
-    console.log(index);
     let confirmStatus = confirm(`are you shure that you want to delete ${item.title}`);
     if (confirmStatus) {
       this.todoService.deleteTodoItem(item.id).subscribe(
@@ -32,5 +31,9 @@ export class ListComponent implements OnInit {
         error => alert(`Oooops something wrong: ${error}. Please try again later`)
       );
     }
+  }
+
+  changeStatus(item:todo){
+this.todoService.updateTodoItem(item.id, {'status': item.status = !item.status}).subscribe();
   }
 }
