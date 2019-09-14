@@ -9,7 +9,7 @@ import { todo } from 'src/app/models/todo';
 })
 export class FormComponent implements OnInit {
 
-  private todoForm: FormGroup;
+  public todoForm: FormGroup;
   private myDate: number = Date.now();
 
   @Output() submitData = new EventEmitter<todo>();
