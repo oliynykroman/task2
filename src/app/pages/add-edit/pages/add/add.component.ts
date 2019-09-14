@@ -12,7 +12,6 @@ export class AddComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit() {
-    console.log('init');
   }
 
   submitData(todoItem: todo) {

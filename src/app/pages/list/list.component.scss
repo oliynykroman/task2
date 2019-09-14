@@ -1,19 +1,19 @@
 .todo-list {
-    margin        : 0;
-    padding       : 0;
-    display       : flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
     flex-direction: column;
-    border-radius : 5px;
-    border        : 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .3);
 
     .todo-item {
-        border-bottom  : 1px solid rgba(0, 0, 0, .3);
-        padding        : 10px 15px;
-        list-style     : none;
-        display        : flex;
-        flex-direction : row;
+        border-bottom: 1px solid rgba(0, 0, 0, .3);
+        padding: 10px 15px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items    : center;
+        align-items: center;
 
         &:hover {
 
@@ -23,93 +23,94 @@
             }
         }
 
-            &:last-child {
-                border-bottom: none;
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .evens {
+            margin-left: auto;
+        }
+
+        &.done {
+            .status {
+                color: green;
             }
 
-            .evens {
-                margin-left: auto;
-            }
-
-            &.done {
-                .status {
-                    color: green;
-                }
-
-                .title {
-                    color          : rgba(0, 0, 0, .5);
-                    text-decoration: line-through;
-                }
+            .title {
+                color: rgba(0, 0, 0, .5);
+                text-decoration: line-through;
             }
         }
     }
+}
 
-    .status {
-        margin-right: 10px;
+.status {
+    margin-right: 10px;
+    cursor: pointer;
 
-        &:hover {
-            color: green
-        }
+    &:hover {
+        color: green
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        font-size: 24px;
+        color: var(--black);
     }
 
-    .content {
-        display       : flex;
-        flex-direction: column;
-
-        .title {
-            font-size: 24px;
-            color    : var(--black);
-        }
-
-        .date {
-            font-size: 11px;
-            color    : rgba(0, 0, 0, .3);
-        }
+    .date {
+        font-size: 11px;
+        color: rgba(0, 0, 0, .3);
     }
+}
 
-    .delete,
-    .edit {
-        background-color: var(--red);
-        color           : var(--white);
-        border-radius   : 3px 0 0 3px;
-        border          : none;
-        padding         : 7px 15px;
-        text-align      : center;
-        opacity         : 0;
-        transition: all .3s ease;
-        cursor          : pointer;
+.delete,
+.edit {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 3px 0 0 3px;
+    border: none;
+    padding: 7px 15px;
+    text-align: center;
+    opacity: 0;
+    transition: all .3s ease;
+    cursor: pointer;
 
-        &:hover {
-            background-color: var(--black);
-        }
-    }
-
-    .edit {
-        background-color: steelblue;
-        color           : var(--white);
-        border-radius   : 0 3px 3px 0;
-        border          : none;
-        padding         : 7px 15px;
-        text-align      : center;
-        cursor          : pointer;
-
-        &:hover {
-            background-color: var(--black);
-        }
-    }
-
-    .add {
+    &:hover {
         background-color: var(--black);
-        border          : none;
-        color           : var(--white);
-        padding         : 10px 40px;
-        text-align      : center;
-        border-radius   : 3px;
-        font-size       : 20px;
-        margin          : 20px auto 0 auto;
-        cursor          : pointer;
-
-        &:hover {
-            background-color: var(--red);
-        }
     }
+}
+
+.edit {
+    background-color: steelblue;
+    color: var(--white);
+    border-radius: 0 3px 3px 0;
+    border: none;
+    padding: 7px 15px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--black);
+    }
+}
+
+.add {
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 20px;
+    margin: 20px auto 0 auto;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--red);
+    }
+}

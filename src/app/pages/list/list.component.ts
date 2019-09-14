@@ -33,7 +33,7 @@ export class ListComponent implements OnInit {
     }
   }
 
-  changeStatus(item:todo){
-this.todoService.updateTodoItem(item.id, {'status': item.status = !item.status}).subscribe();
+  changeStatus(item: todo) {
+    this.todoService.updateTodoItem(item.id, { 'status': item.status = !item.status }).subscribe();
   }
 }

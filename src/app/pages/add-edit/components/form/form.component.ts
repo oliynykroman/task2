@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { todo } from 'src/app/models/todo';
 
@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
   private myDate: number = Date.now();
 
   @Output() submitData = new EventEmitter<todo>();
+  @Input() todoItem:todo = new todo();
 
   constructor() { }
 
@@ -22,7 +23,7 @@ export class FormComponent implements OnInit {
 
   initForm() {
     this.todoForm = new FormGroup({
-      "title": new FormControl('', Validators.required),
+      "title": new FormControl(this.todoItem.title, Validators.required),
       "status": new FormControl(false),
       "date": new FormControl(this.myDate)
     });

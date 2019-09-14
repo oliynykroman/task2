@@ -1,3 +1,7 @@
 <h2 class="title">Edit todo</h2>
-<app-form></app-form>
+<app-form 
+[todoItem] = "todoItem"
+(submitData) = "submitData($event)"
+*ngIf="todoItem">
+</app-form>
 <button class="add" routerLink="/">Back to list</button>
