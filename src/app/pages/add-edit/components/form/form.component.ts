@@ -22,7 +22,6 @@ export class FormComponent implements OnInit {
   }
 
   initForm() {
-    console.log(this.todoItem)
     this.todoForm = this.fb.group({
       "title": this.fb.control(this.todoItem.title, Validators.required),
       "status":  this.fb.control(false),
