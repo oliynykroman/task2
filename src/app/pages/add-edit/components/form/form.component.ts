@@ -31,6 +31,6 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     this.submitData.emit(this.todoForm.value);
-    this.todoForm.controls['title'].setValue('');
+    this.todoForm.reset();
   }
 }
