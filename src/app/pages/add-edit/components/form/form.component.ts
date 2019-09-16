@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { todo } from 'src/app/models/todo';
 
 @Component({
@@ -15,17 +15,18 @@ export class FormComponent implements OnInit {
   @Output() submitData = new EventEmitter<todo>();
   @Input() todoItem:todo = new todo();
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.initForm();
   }
 
   initForm() {
-    this.todoForm = new FormGroup({
-      "title": new FormControl(this.todoItem.title, Validators.required),
-      "status": new FormControl(false),
-      "date": new FormControl(this.myDate)
+    console.log(this.todoItem)
+    this.todoForm = this.fb.group({
+      "title": this.fb.control(this.todoItem.title, Validators.required),
+      "status":  this.fb.control(false),
+      "date":  this.fb.control(this.myDate)
     });
   }
 
